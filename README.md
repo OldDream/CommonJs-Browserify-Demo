@@ -5,7 +5,9 @@ npm i // install
 gulp browserify  // launch 
 ```
 
-bundle CommonJs modules to a single js file with uglify and sourceMap to sue it in browser.
+bundle CommonJs modules to a single .js file with uglify and sourceMap to use it in browser.
+
+open demo/index.html to see the result
 
 check gulpfils.js for details.
 
