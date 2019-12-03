@@ -4,7 +4,7 @@ class actionsFun {
         this.text2 = 'test2'
     }
     check() {
-        console.log('check');
+        console.log('start check function');
     }
 
 }

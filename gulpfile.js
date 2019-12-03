@@ -85,5 +85,4 @@ gulp.task('es5min', gulp.series('cleanES5', 'cleanMin', 'toes5', 'min'));
 gulp.task('auto', function () {
     // 监听文件修改，当文件被修改则执行 script 任务
     gulp.watch('src/js/**/*.js', gulp.series('cleanDist', 'browserify'));
-    gulp.watch('src/js/*.js', gulp.series('cleanDist', 'browserify'));
 });
