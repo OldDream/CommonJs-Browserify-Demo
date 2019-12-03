@@ -14,15 +14,15 @@ const browserify = require('browserify'),
 gulp.task('browserify', () => {
     return browserify({
         entries: ['src/js/index.js'],
-        debug: true, // 告知Browserify在运行同时生成内联sourcemap用于调试
+        debug: true, // 告知Browserify在运行同时生成内联sourcemap用于调试; ask Browserify to generate sourcemap
     })
-        .transform("babelify", { presets: ["@babel/env"] })
+        .transform("babelify", { presets: ["@babel/env"] }) // set babel env
         .bundle()
-        .pipe(source('index.js'))
+        .pipe(source('index.js')) // rename output file here
         .pipe(buffer()) // 缓存文件内容
-        .pipe(sourcemaps.init({ loadMaps: true })) // 从 browserify 文件载入 map
+        .pipe(sourcemaps.init({ loadMaps: true })) // 从 browserify 文件载入 map;load sourceMap from Browserify
         .pipe(uglify())
-        .pipe(sourcemaps.write('.')) // 写入 .map 文件
+        .pipe(sourcemaps.write('.')) // 写入 .map 文件; write .map file
         .pipe(gulp.dest('dist/js'));
 })
 
