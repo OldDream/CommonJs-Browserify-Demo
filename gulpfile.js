@@ -1,11 +1,11 @@
 const gulp = require("gulp");
 const babel = require("gulp-babel");    // 用于ES6转化ES5
-var count = require('gulp-count');
+const count = require('gulp-count');
 const concat = require("gulp-concat");
 const uglify = require('gulp-uglify'); // 用于压缩 JS
 const webserver = require('gulp-webserver');
-var clean = require('gulp-clean');
-var browserify = require('browserify'),
+const clean = require('gulp-clean');
+const browserify = require('browserify'),
     babelify = require('babelify'),
     sourcemaps = require('gulp-sourcemaps'),
     source = require('vinyl-source-stream'),
