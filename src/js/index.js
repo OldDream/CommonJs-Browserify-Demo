@@ -14,9 +14,7 @@ const getGlobal = function () {
     throw new Error('unable to locate global object');
 };
 
-getGlobal().actionsfun = new actionsFun()
-// let actionsfun = new actionsFun()
-console.log(actionsfun);
+getGlobal().actionsfun = new actionsFun() // expose the instance to Global Object
 
 let testObj = require('./modules/moduleA.js')
 testObj.test()
