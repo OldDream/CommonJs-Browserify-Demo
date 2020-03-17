@@ -16,7 +16,9 @@ gulp.task('browserify', () => {
         entries: ['src/js/index.js'],
         debug: true, // 告知Browserify在运行同时生成内联sourcemap用于调试; ask Browserify to generate sourcemap
     })
-        .transform("babelify", { presets: ["@babel/env"] }) // set babel env
+        .transform("babelify", {
+            "presets": [["@babel/preset-env", { "useBuiltIns": "usage", "corejs": 3 }]], "plugins": [["@babel/plugin-transform-runtime"]]
+        })
         .bundle()
         .pipe(source('index.js')) // rename output file here
         .pipe(buffer()) // 缓存文件内容

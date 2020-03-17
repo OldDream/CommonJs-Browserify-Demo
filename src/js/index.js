@@ -6,7 +6,12 @@ class actionsFun {
     check() {
         console.log('start check function');
     }
-
+    test () {
+        return new Promise((resolve, reject) => {
+            resolve('pass')    
+        })
+        
+    }
 }
 const getGlobal = function () {
     if (typeof window !== 'undefined') { return window; }
